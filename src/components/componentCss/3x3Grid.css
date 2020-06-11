@@ -1,3 +1,7 @@
 .calcHeight {
     height: calc(12vw)
 }
+
+.zeroMargin {
+    margin-bottom: 0 !important;
+}

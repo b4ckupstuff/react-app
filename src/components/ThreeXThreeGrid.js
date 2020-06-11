@@ -6,18 +6,30 @@ function ThreeXThreeGrid() {
         <div className="App">
             <div className="container">
                 <div className="row">
-                    
-                    <div className="offset-2 col-3 calcHeight border border-primary text-center">1</div>
-                    <div className="col-3 calcHeight border border-primary text-center">2</div>
-                    <div className="col-3 calcHeight border border-primary text-center">3</div>
 
-                    <div className="offset-2 col-3 calcHeight border border-primary text-center">4</div>
-                    <div className="col-3 calcHeight border border-primary text-center">5</div>
-                    <div className="col-3 calcHeight border border-primary text-center">6</div>
-
-                    <div className="offset-2 col-3 calcHeight border border-primary text-center">7</div>
-                    <div className="col-3 calcHeight border border-primary text-center">8</div>
-                    <div className="col-3 calcHeight border border-primary text-center">9</div>
+                    <div className="col-9 mx-auto">
+                        <div className="row">
+                            <div className="col-4 calcHeight alert alert-primary border border-primary text-center zeroMargin">
+                                <p className="">1</p>
+                            </div>
+                            <div className="col-4 calcHeight alert alert-secondary border border-primary text-center zeroMargin">2</div>
+                            <div className="col-4 calcHeight alert alert-success border border-primary text-center zeroMargin">3</div>
+                        </div>
+                    </div>
+                    <div className="col-9 mx-auto">
+                        <div className="row">
+                            <div className="col-4 calcHeight alert alert-warning border border-primary text-center zeroMargin">4</div>
+                            <div className="col-4 calcHeight alert alert-success border border-primary text-center zeroMargin">5</div>
+                            <div className="col-4 calcHeight alert alert-info border border-primary text-center zeroMargin">6</div>
+                        </div>
+                    </div>
+                    <div className="col-9 mx-auto">
+                        <div className="row">
+                            <div className="col-4 calcHeight alert alert-secondary border border-primary text-center zeroMargin">7</div>
+                            <div className="col-4 calcHeight alert alert-danger border border-primary text-center zeroMargin">8</div>
+                            <div className="col-4 calcHeight alert alert-primary border border-primary text-center zeroMargin">9</div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
