@@ -22,7 +22,7 @@ function EntryForm() {
 					<label for="inputPassword">Date of Birth</label>
 				</div>
 
-				<Link to="/result"><button className="btn btn-lg btn-primary btn-block" type="submit">Go</button></Link>
+				<Link to="/result"><button className="btn btn-lg btn-info btn-block" type="submit">Go</button></Link>
 				<p className="mt-5 mb-3 text-muted text-center">&copy; 2017-2020</p>
 			</form>
 		</div>

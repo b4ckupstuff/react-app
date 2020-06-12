@@ -5,3 +5,11 @@
 .zeroMargin {
     margin-bottom: 0 !important;
 }
+
+.resetBackgroundColor {
+    background-color: inherit !important;
+}
+
+.breadcrumbContent::before {
+    content: ">" !important;
+}
