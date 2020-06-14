@@ -7,8 +7,8 @@ import {
 } from "react-router-dom";
 import logo from './logo.svg';
 
-import EntryForm from './components/EntryForm.';
-import ThreeXThreeGrid from './components/ThreeXThreeGrid';
+import EntryFormContainer from './containers/EntryFormContainer';
+import ResultContainer from "./containers/ResultContainer";
 
 // import './App.css';
 
@@ -18,10 +18,10 @@ function App() {
 		<Router>
 			<Switch>
 				<Route exact path="/">
-					<EntryForm />
+					<EntryFormContainer />
 				</Route>
 				<Route exact path="/result">
-					<ThreeXThreeGrid />
+					<ResultContainer />
 				</Route>
 			</Switch>
 		</Router>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-function EntryForm() {
+function EntryFormContainer() {
+
 	return (
 		<div className="App">
 			<form className="form-signin">
@@ -13,20 +14,22 @@ function EntryForm() {
 				</div>
 
 				<div className="form-label-group">
-					<input type="text" id="inputEmail" className="form-control" placeholder="Full Name" required autofocus />
+					<input type="text" id="inputEmail" className="form-control" placeholder="Full Name" autofocus />
 					<label for="inputEmail">Full Name</label>
 				</div>
 
 				<div className="form-label-group">
-					<input type="date" id="inputPassword" className="form-control" placeholder="Date if Birth" required />
+					<input type="date" id="inputPassword" className="form-control" placeholder="Date if Birth" />
 					<label for="inputPassword">Date of Birth</label>
 				</div>
 
-				<Link to="/result"><button className="btn btn-lg btn-info btn-block" type="submit">Go</button></Link>
+				<Link to="/result">
+					<button className="btn btn-lg btn-info btn-block" type="submit">Go</button>
+				</Link>
 				<p className="mt-5 mb-3 text-muted text-center">&copy; 2017-2020</p>
 			</form>
 		</div>
 	);
 }
 
-export default EntryForm;
+export default EntryFormContainer;
