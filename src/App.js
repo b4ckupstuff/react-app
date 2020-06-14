@@ -2,16 +2,13 @@ import React from 'react';
 import {
 	BrowserRouter as Router,
 	Switch,
-	Route,
-	Link
+	Route
 } from "react-router-dom";
-import logo from './logo.svg';
 
 import EntryFormContainer from './containers/EntryFormContainer';
 import ResultContainer from "./containers/ResultContainer";
 
 // import './App.css';
-
 
 function App() {
 	return (
