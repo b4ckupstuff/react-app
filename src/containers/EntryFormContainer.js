@@ -64,22 +64,16 @@ function EntryFormContainer() {
 					<label htmlFor="inputPassword">Date of Birth</label>
 				</div>
 
-				{/*<Link to="/result">*/}
 				{
 					!(spinnerLoadingState) ?
-					<button className="btn btn-lg btn-info btn-block" type="status" onClick={handleOnClick}>
-						Go
-					</button>
+						<button className="btn btn-lg btn-info btn-block" type="status" onClick={handleOnClick}>
+							Go
+						</button>
 						:
 						<button className="btn btn-lg btn-info btn-block" type="status" onClick={handleOnClick} disabled>
 							<span className="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
 						</button>
 				}
-					{/*<button className="btn btn-lg btn-info btn-block" type="status" onClick={handleOnClick}>
-						{(spinnerLoadingState) && <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true" />}
-						{(spinnerLoadingState) ? "" : "Go"}
-					</button>*/}
-				{/*</Link>*/}
 				<p className="mt-5 mb-3 text-muted text-center">&copy; 2017-2020</p>
 			</form>
 		</div>
