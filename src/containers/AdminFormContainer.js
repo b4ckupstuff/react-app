@@ -19,7 +19,7 @@ function AdminFormContainer() {
     const [alertMessage, changeAlertMessage] = useState("");
 
     const fetchLevelOneData = () => {
-        fetch('http://localhost:3001/levelUno')
+        fetch('http://52.226.38.5:3001/levelUno')
             .then(res => res.json())
             .then(data => {
                 changeHierarchyOne(data);
@@ -30,7 +30,7 @@ function AdminFormContainer() {
     };
 
     const fetchLevelTwoData = (parent) => {
-        fetch(`http://localhost:3001/levelDuos/${parent}`)
+        fetch(`http://52.226.38.5:3001/levelDuos/${parent}`)
             .then(res => res.json())
             .then(data => {
                 changeHierarchyTwo(data);
@@ -41,7 +41,7 @@ function AdminFormContainer() {
     };
 
     const fetchLevelThreeData = (grandparent, parent) => {
-        fetch(`http://localhost:3001/levelTres/${grandparent}/${parent}`)
+        fetch(`http://52.226.38.5:3001/levelTres/${grandparent}/${parent}`)
             .then(res => res.json())
             .then(data => {
                 changeHierarchyThree(data);
@@ -52,7 +52,7 @@ function AdminFormContainer() {
     };
 
     const fetchLevelFourData = (greatGrandParent, grandparent, parent) => {
-        fetch(`http://localhost:3001/levelQuatro/${greatGrandParent}/${grandparent}/${parent}`)
+        fetch(`http://52.226.38.5:3001/levelQuatro/${greatGrandParent}/${grandparent}/${parent}`)
             .then(res => res.json())
             .then(data => {
                 changeHierarchyFour(data);
@@ -64,7 +64,7 @@ function AdminFormContainer() {
     };
 
     const fetchFinalValue = (one, two, three, four) => {
-        fetch(`http://localhost:3001/finalValue/${one}/${two}/${three}/${four}`)
+        fetch(`http://52.226.38.5:3001/finalValue/${one}/${two}/${three}/${four}`)
                 .then(res => res.json())
                 .then(data => {
                     changeFinalValue(data);
@@ -110,7 +110,7 @@ function AdminFormContainer() {
         let three = document.getElementById("formSelectTres").value;
         let four = document.getElementById("inputEmail").value;
         let five = (document.getElementById("formSelectQuatro") || {}).value;
-        fetch(`http://localhost:3001/value`,{
+        fetch(`http://52.226.38.5:3001/value`,{
             "method": "post",
             headers: {
                 "Content-Type": "application/json",
