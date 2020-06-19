@@ -10,7 +10,10 @@ function ResultContainer(props) {
         <div className="App">
             <div className="container">
 
-                <Breadcrumb/>
+                <Breadcrumb
+                    levelOne="Home"
+                    levelTwo="Your Name Here"
+                />
 
                 <ThreeXThreeGrid />
 

@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+import Breadcrumb from "../components/componentCss/Breadcrumb";
+import DismissableAlert from "../components/DismissableAlert";
 
 function AdminFormContainer() {
 
@@ -7,9 +9,14 @@ function AdminFormContainer() {
     const [hierarchyTwo, changeHierarchyTwo] = useState(undefined);
     const [hierarchyThree, changeHierarchyThree] = useState(undefined);
     const [hierarchyFour, changeHierarchyFour] = useState(undefined);
+    const [finalValue, changeFinalValue] = useState(undefined);
     const [hierarchyOneSelectedValue, changeHierarchyOneSelectedValue] = useState(undefined);
     const [hierarchyTwoSelectedValue, changeHierarchyTwoSelectedValue] = useState(undefined);
     const [hierarchyThreeSelectedValue, changeHierarchyThreeSelectedValue] = useState(undefined);
+    const [hierarchyFourSelectedValue, changeHierarchyFourSelectedValue] = useState(undefined);
+    const [showAlert, changeShowAlert] = useState(false);
+    const [alertCode, changeAlertCode] = useState("");
+    const [alertMessage, changeAlertMessage] = useState("");
 
     const fetchLevelOneData = () => {
         fetch('http://localhost:3001/levelUno')
@@ -49,8 +56,20 @@ function AdminFormContainer() {
             .then(res => res.json())
             .then(data => {
                 changeHierarchyFour(data);
+                if(!data.length) {
+                    fetchFinalValue(greatGrandParent, grandparent, parent);
+                }
             })
             .catch(err => console.log(err));
+    };
+
+    const fetchFinalValue = (one, two, three, four) => {
+        fetch(`http://localhost:3001/finalValue/${one}/${two}/${three}/${four}`)
+                .then(res => res.json())
+                .then(data => {
+                    changeFinalValue(data);
+                })
+                .catch(err => console.log(err));
     };
 
     const handleOnHierarchyOneSelected = (evt) => {
@@ -58,6 +77,7 @@ function AdminFormContainer() {
         changeHierarchyTwo(undefined);
         changeHierarchyThree(undefined);
         changeHierarchyFour(undefined);
+        changeFinalValue(undefined);
         fetchLevelTwoData(evt.target.value);
     };
 
@@ -65,17 +85,54 @@ function AdminFormContainer() {
         changeHierarchyTwoSelectedValue(evt.target.value);
         changeHierarchyThree(undefined);
         changeHierarchyFour(undefined);
+        changeFinalValue(undefined);
         fetchLevelThreeData(hierarchyOneSelectedValue, evt.target.value);
     };
 
     const handleOnHierarchyThreeSelected = (evt) => {
         changeHierarchyThreeSelectedValue(evt.target.value);
         changeHierarchyFour(undefined);
+        changeFinalValue(undefined);
         fetchLevelFourData(hierarchyOneSelectedValue, hierarchyTwoSelectedValue, evt.target.value)
     };
 
-    const handleOnClick = () => {
+    const handleOnHierarchyFourSelected = (evt) => {
+        changeFinalValue(undefined);
+        changeHierarchyFourSelectedValue(evt.target.value);
+        // console.log(hierarchyFourSelectedValue);
+        fetchFinalValue(hierarchyOneSelectedValue, hierarchyTwoSelectedValue, hierarchyThreeSelectedValue, evt.target.value);
+    };
 
+    const handleOnClick = () => {
+        changeSpinnerLoadingState(true);
+        let one = document.getElementById("formSelectUno").value;
+        let two = document.getElementById("formSelectDuos").value;
+        let three = document.getElementById("formSelectTres").value;
+        let four = document.getElementById("inputEmail").value;
+        let five = (document.getElementById("formSelectQuatro") || {}).value;
+        fetch(`http://localhost:3001/value`,{
+            "method": "post",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*"
+            },
+            "body": JSON.stringify({
+                one,
+                two,
+                three,
+                four,
+                five
+            })
+        })
+            .then(res => res.json())
+            .then(data => {
+                changeSpinnerLoadingState(false);
+                changeShowAlert(true);
+                changeAlertCode("Success!");
+                changeAlertMessage(`${five || three} was updated successfully for ${two}`)
+            })
+            .catch(err => console.log(err));
+        // changeSpinnerLoadingState(false);
     };
 
     useEffect(() => {
@@ -85,7 +142,18 @@ function AdminFormContainer() {
 
     return (
         <div className="App">
-            <form className="form-signin" action="#">
+            <div className="container">
+                <Breadcrumb
+                    levelOne="Admin"
+                    levelTwo="Edit Data"
+                />
+                { showAlert &&
+                    <DismissableAlert
+                        code={alertCode}
+                        message={alertMessage}
+                    />
+                }
+                <form className="form-signin" action="#">
 
                 {
                     hierarchyOne &&
@@ -133,46 +201,51 @@ function AdminFormContainer() {
                     </div>
                 }
 
-                {
+                {/*{
                     hierarchyFour && !hierarchyFour.length &&
                         <div className="form-label-group">
                             <input type="text" id="inputEmail" className="form-control" placeholder="Value" required />
                             <label htmlFor="inputEmail">Value</label>
                         </div>
-                }
+                }*/}
 
                 {
-                    hierarchyFour && hierarchyFour.length &&
-                    <div>
+                    hierarchyFour && Array.isArray(hierarchyFour) && hierarchyFour.length ?
                         <div className="form-group">
                             {/*<label htmlFor="formSelectTres">Field Uno</label>*/}
-                            <select className="form-control form-control-lg" id="formSelectQuatro">
+                            <select className="form-control form-control-lg" id="formSelectQuatro" onChange={handleOnHierarchyFourSelected}>
                                 <option key="100" value="">Select</option>
                                 {
-                                    hierarchyFour.map((value, index) => {
+                                    (hierarchyFour).map((value, index) => {
                                         return <option key={index} value={value}>{value}</option>
                                     })
                                 }
                             </select>
-                        </div>
-                        <div className="form-label-group">
-                            <input type="text" id="inputEmail" className="form-control" placeholder="Value" required />
-                            <label htmlFor="inputEmail">Value</label>
-                        </div>
+                        </div> :
+                        <div />
+                }
+
+
+                {
+                    finalValue &&
+                    <div className="form-label-group">
+                        <input type="text" id="inputEmail" className="form-control" placeholder="Value" defaultValue={finalValue} required />
+                        <label htmlFor="inputEmail">Value</label>
                     </div>
                 }
 
                 {
                     !(spinnerLoadingState) ?
-                        <button className="btn btn-lg btn-info btn-block" type="status" onClick={handleOnClick}>
+                        finalValue && <button className="btn btn-lg btn-info btn-block" type="status" onClick={handleOnClick}>
                             Submit
                         </button>
                         :
-                        <button className="btn btn-lg btn-info btn-block" type="status" onClick={handleOnClick} disabled>
+                        finalValue && <button className="btn btn-lg btn-info btn-block" type="status" onClick={handleOnClick} disabled>
                             <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
                         </button>
                 }
             </form>
+            </div>
         </div>
     );
 }
