@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { useHistory } from "react-router-dom";
+const apiEndpoint = ``;
 
 function EntryFormContainer() {
 
@@ -23,7 +24,7 @@ function EntryFormContainer() {
 		let validationResult = validateInput(fullName, dateOfBirth);
 		if(validationResult) {
 			// make api call
-			fetch('http://localhost:3000/bPMAVm', {
+			fetch(`${apiEndpoint}/bPMAVm`, {
 				method: "post",
 				headers: {
 					"Content-Type": "application/json",

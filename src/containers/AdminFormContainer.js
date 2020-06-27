@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Breadcrumb from "../components/componentCss/Breadcrumb";
 import DismissableAlert from "../components/DismissableAlert";
-const apiEndpoint = `http://localhost:3000/api`;
+// const apiEndpoint1 = `http://localhost:3000/api`;
+const apiEndpoint = `/api`;
 
 function AdminFormContainer() {
 
