@@ -23,7 +23,7 @@ function EntryFormContainer() {
 		let validationResult = validateInput(fullName, dateOfBirth);
 		if(validationResult) {
 			// make api call
-			fetch('http://localhost:3001/bPMAVm', {
+			fetch('http://localhost:3000/bPMAVm', {
 				method: "post",
 				headers: {
 					"Content-Type": "application/json",
