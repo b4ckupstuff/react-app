@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 function Breadcrumb(props) {
-    console.log(JSON.stringify(props));
+    // console.log(JSON.stringify(props));
     return (
         <nav aria-label="breadcrumb">
             <ol className="breadcrumb resetBackgroundColor">
