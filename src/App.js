@@ -8,6 +8,7 @@ import {
 import EntryFormContainer from './containers/EntryFormContainer';
 import ResultContainer from "./containers/ResultContainer";
 import AdminFormContainer from "./containers/AdminFormContainer";
+import AdminHome from "./containers/AdminHome";
 
 // import './App.css';
 
@@ -20,6 +21,9 @@ function App() {
 				</Route>
 				<Route exact path="/result">
 					<ResultContainer />
+				</Route>
+				<Route exact path="/admin-home">
+					<AdminHome />
 				</Route>
 				<Route exact path="/admin">
 					<AdminFormContainer />
