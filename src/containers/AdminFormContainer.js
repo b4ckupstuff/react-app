@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Breadcrumb from "../components/componentCss/Breadcrumb";
 import DismissableAlert from "../components/DismissableAlert";
 // const apiEndpoint = `http://localhost:3000/api`;
-const apiEndpoint = `http://new.thyhealingcirclebbeenhu.com:3000/api`;
+const apiEndpoint = `https://new.thyhealingcirclebbeenhu.com:3000/api`;
 
 function AdminFormContainer() {
 
@@ -155,7 +155,7 @@ function AdminFormContainer() {
                         message={alertMessage}
                     />
                 }
-                <form className="form-signin" action="#">
+                <form className="" action="javascript.void(0)">
 
                 {
                     hierarchyOne &&
@@ -207,16 +207,23 @@ function AdminFormContainer() {
                     hierarchyThree &&
                     Object.keys(hierarchyThree).map((value, index) => {
                         return (typeof hierarchyThree[value] === "object") ?
-                            Object.keys(hierarchyThree[value]).map((childValue, childIndex) => {
+                            /*Object.keys(hierarchyThree[value]).map((childValue, childIndex) => {
                                 return <div className="form-label-group" key={childIndex}>
                                     <input type="text" id="input" className="form-control" placeholder={value + " -> " + childValue} defaultValue={hierarchyThree[value][childValue]} />
                                     <label htmlFor="input">{value} -> {childValue}</label>
                                 </div>
-                            })
+                            })*/
+                            <div key={index}/>
                             :
-                            <div className="form-label-group" key={index}>
+                            /*<div className="form-label-group" key={index}>
                                 <input type="text" id="input" className="form-control" placeholder={value} defaultValue={hierarchyThree[value]} />
                                 <label htmlFor="input">{value}</label>
+                            </div>*/
+                            <div className="form-group row" key={index}>
+                                <label htmlFor="input" className="col-sm-4 col-form-label">{value}</label>
+                                <div className="col-sm-8">
+                                    <input type="text" className="form-control" id="input" defaultValue={hierarchyThree[value]}/>
+                                </div>
                             </div>
                     })
                 }
