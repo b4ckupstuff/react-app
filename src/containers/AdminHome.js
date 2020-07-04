@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import AdminHomeTopAndSidebar from "../components/AdminHomeTopAndSidebar";
 import Table from "../components/Table";
+const apiEndpoint = process.env.REACT_APP_URL;
 
 function AdminHome(props) {
 
@@ -8,7 +9,7 @@ function AdminHome(props) {
     const [data, changeData] = useState([]);
 
     const fetchTableData = () => {
-        fetch(`${process.env.URL}/adminData/number`)
+        fetch(`${apiEndpoint}/adminData/number`)
         .then(res => res.json())
         .then(response => {
             changeHeaders(response.headers);

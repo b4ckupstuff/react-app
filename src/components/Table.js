@@ -16,13 +16,13 @@ function Table(props) {
                     </button
                 </div>*/}
             </div>
-            <div className="table-responsive" style={{"overflow-x":"auto"}}>
-                <table className="table table-striped table-sm">
+            <div className="table-responsive" style={{"overflowX":"auto"}}>
+                <table className="table table-striped">
                     <thead>
-                    <tr>
+                    <tr className="d-flex">
                         {
                             props.headers.map((value, index) => {
-                                return <th>{value}</th>
+                                return <th className="col-sm-6 col-md-3" key={index}>{value}</th>
                             })
                         }
                     </tr>
@@ -30,10 +30,11 @@ function Table(props) {
                     <tbody>
                     {
                         props.data.map((value, index) => {
-                            return <tr>
+                            return <tr className="d-flex" key={index}>
                                     {
                                         props.data[index].map((innerValue, innerIndex) => {
-                                            return <td>{innerValue}</td>
+                                            return <td className="col-sm-6 col-md-3">{innerValue}</td>
+                                            /*return <td className="col-sm-6 col-md-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</td>*/
                                         })
                                     }
                                 </tr>
