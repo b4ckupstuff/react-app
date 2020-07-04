@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Breadcrumb from "../components/componentCss/Breadcrumb";
 import DismissableAlert from "../components/DismissableAlert";
 // const apiEndpoint = `http://localhost:3000/api`;
-const apiEndpoint = process.env.URL; //`https://numbers.thyhealingcirclebbeenhu.com/api`;
+const apiEndpoint = process.env.REACT_APP_URL; //`https://numbers.thyhealingcirclebbeenhu.com/api`;
 
 function AdminFormContainer() {
 

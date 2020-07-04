@@ -18,7 +18,7 @@ function Table(props) {
             </div>
             <div className="table-responsive" style={{"overflowX":"auto"}}>
                 <table className="table table-striped">
-                    <thead>
+                    <thead className="thead-dark">
                     <tr className="d-flex">
                         {
                             props.headers.map((value, index) => {
@@ -33,8 +33,12 @@ function Table(props) {
                             return <tr className="d-flex" key={index}>
                                     {
                                         props.data[index].map((innerValue, innerIndex) => {
-                                            return <td className="col-sm-6 col-md-3">{innerValue}</td>
-                                            /*return <td className="col-sm-6 col-md-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</td>*/
+                                            if(innerIndex === 0) {
+                                                return <th scope="row">{innerValue}</th>
+                                            } else {
+                                                return <td className="col-sm-6 col-md-3">{innerValue}</td>
+                                                /*return <td className="col-sm-6 col-md-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</td>*/
+                                            }
                                         })
                                     }
                                 </tr>
