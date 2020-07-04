@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react';
+import { withRouter } from "react-router";
 import Breadcrumb from "../components/componentCss/Breadcrumb";
 import DismissableAlert from "../components/DismissableAlert";
 // const apiEndpoint = `http://localhost:3000/api`;
 const apiEndpoint = process.env.REACT_APP_URL;
 
-function AdminFormContainer() {
+function AdminFormContainer(props) {
 
     const [spinnerLoadingState, changeSpinnerLoadingState] = useState(false);
-    const [hierarchyOne, changeHierarchyOne] = useState(undefined);
-    const [hierarchyTwo, changeHierarchyTwo] = useState(undefined);
+    const [hierarchyOne, changeHierarchyOne] = useState(props.location.one);
+    const [hierarchyTwo, changeHierarchyTwo] = useState(props.location.two);
     const [hierarchyThree, changeHierarchyThree] = useState(undefined);
     const [hierarchyFour, changeHierarchyFour] = useState(undefined);
     const [finalValue, changeFinalValue] = useState(undefined);
@@ -160,23 +161,24 @@ function AdminFormContainer() {
                 {
                     hierarchyOne &&
                     <div className="form-group">
-                        {/*<label htmlFor="formSelectUno">Field Uno</label>*/}
-                        <select className="form-control form-control-lg" id="formSelectUno" onChange={handleOnHierarchyOneSelected}>
+                        <label htmlFor="input">{hierarchyOne}</label>
+                        {/*<select className="form-control form-control-lg" id="formSelectUno" onChange={handleOnHierarchyOneSelected}>
                             <option key="100" value="">Select</option>
                             {
                                 hierarchyOne.map((value, index) => {
                                     return <option key={index} value={value}>{value}</option>
                                 })
                             }
-                        </select>
+                        </select>*/}
+                        <input type="text" className="form-control" id="input" defaultValue={hierarchyTwo} disabled/>
                     </div>
                 }
 
 
-                {
+                    {/*{
                     hierarchyTwo &&
                     <div className="form-group">
-                        {/*<label htmlFor="formSelectDuos">Field Uno</label>*/}
+                        <label htmlFor="formSelectDuos">Field Uno</label>
                         <select className="form-control form-control-lg" id="formSelectDuos" onChange={handleOnHierarchyTwoSelected}>
                             <option key="100" value="">Select</option>
                             {
@@ -186,7 +188,7 @@ function AdminFormContainer() {
                             }
                         </select>
                     </div>
-                }
+                }*/}
 
                 {/*{
                     hierarchyThree &&
@@ -277,4 +279,4 @@ function AdminFormContainer() {
     );
 }
 
-export default AdminFormContainer;
+export default withRouter(AdminFormContainer);
