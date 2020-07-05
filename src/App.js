@@ -23,12 +23,12 @@ function App() {
 				<Route exact path="/result">
 					<ResultContainer />
 				</Route>
-				<Route exact path="/admin-home">
+				<Route exact path="/admin">
 					<AdminHomeContainer />
 				</Route>
-				<Route exact path="/admin">
+				{/*<Route exact path="/admin">
 					<AdminFormContainerOld />
-				</Route>
+				</Route>*/}
 				<Route path="/admin/edit/:a/:b" component={AdminFormContainer}>
 					{/*<AdminFormContainer a={k} b={v} />*/}
 				</Route>
