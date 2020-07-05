@@ -4,8 +4,8 @@ import Breadcrumb from "../components/componentCss/Breadcrumb";
 import DismissableAlert from "../components/DismissableAlert";
 const apiEndpoint = process.env.REACT_APP_URL;
 
-function AdminFormContainer(props) {
-
+function AdminFormContainerEditExisting(props) {
+console.log(props);
     const [spinnerLoadingState, changeSpinnerLoadingState] = useState(true);
     const [rootKey, changeRootKey] = useState(props.match.params.a);
     const [rootValue, changeRootValue] = useState(props.match.params.b);
@@ -58,6 +58,16 @@ function AdminFormContainer(props) {
                     }
 
                     {
+                        rootKey && !rootValue &&
+                        <div className="form-group row">
+                            <label htmlFor="input" className="col-sm-4 col-form-label">{rootKey}</label>
+                            <div className="col-sm-8">
+                                <input type="text" className="form-control" id="input"/>
+                            </div>
+                        </div>
+                    }
+
+                    {
                         spinnerLoadingState && <div className="d-flex justify-content-center mt-5">
                             <div className="spinner-grow text-secondary" role="status">
                                 <span className="sr-only">Loading...</span>
@@ -83,4 +93,4 @@ function AdminFormContainer(props) {
     )
 }
 
-export default (AdminFormContainer);
+export default (AdminFormContainerEditExisting);

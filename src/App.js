@@ -7,9 +7,9 @@ import {
 
 import EntryFormContainer from './containers/EntryFormContainer';
 import ResultContainer from "./containers/ResultContainer";
-import AdminFormContainerOld from "./containers/AdminFormContainerOld";
 import AdminHomeContainer from "./containers/AdminHomeContainer";
-import AdminFormContainer from "./containers/AdminFormContainer";
+import AdminFormContainerEditExisting from "./containers/AdminFormContainerEditExisting";
+import AdminFormContainerCreateNew from "./containers/AdminFormContainerCreateNew";
 
 // import './App.css';
 
@@ -29,8 +29,11 @@ function App() {
 				{/*<Route exact path="/admin">
 					<AdminFormContainerOld />
 				</Route>*/}
-				<Route path="/admin/edit/:a/:b" component={AdminFormContainer}>
-					{/*<AdminFormContainer a={k} b={v} />*/}
+				<Route path="/admin/edit/:a/:b" component={AdminFormContainerEditExisting}>
+					{/*<AdminFormContainerEditExisting a={k} b={v} />*/}
+				</Route>
+				<Route path="/admin/new/:a" component={AdminFormContainerCreateNew}>
+					{/*<AdminFormContainerEditExisting a={k} b={v} />*/}
 				</Route>
 			</Switch>
 		</Router>
