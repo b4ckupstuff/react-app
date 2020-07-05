@@ -3,7 +3,7 @@ import AdminHomeTopAndSidebar from "../components/AdminHomeTopAndSidebar";
 import Table from "../components/Table";
 const apiEndpoint = process.env.REACT_APP_URL;
 
-function AdminHome(props) {
+function AdminHomeContainer(props) {
 
     const [headers, changeHeaders] = useState([]);
     const [data, changeData] = useState([]);
@@ -32,4 +32,4 @@ function AdminHome(props) {
     )
 }
 
-export default AdminHome;
+export default AdminHomeContainer;

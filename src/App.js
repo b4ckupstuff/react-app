@@ -7,8 +7,9 @@ import {
 
 import EntryFormContainer from './containers/EntryFormContainer';
 import ResultContainer from "./containers/ResultContainer";
+import AdminFormContainerOld from "./containers/AdminFormContainerOld";
+import AdminHomeContainer from "./containers/AdminHomeContainer";
 import AdminFormContainer from "./containers/AdminFormContainer";
-import AdminHome from "./containers/AdminHome";
 
 // import './App.css';
 
@@ -23,10 +24,13 @@ function App() {
 					<ResultContainer />
 				</Route>
 				<Route exact path="/admin-home">
-					<AdminHome />
+					<AdminHomeContainer />
 				</Route>
 				<Route exact path="/admin">
-					<AdminFormContainer />
+					<AdminFormContainerOld />
+				</Route>
+				<Route path="/admin/edit/:a/:b" component={AdminFormContainer}>
+					{/*<AdminFormContainer a={k} b={v} />*/}
 				</Route>
 			</Switch>
 		</Router>

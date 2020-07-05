@@ -5,7 +5,7 @@ import DismissableAlert from "../components/DismissableAlert";
 // const apiEndpoint = `http://localhost:3000/api`;
 const apiEndpoint = process.env.REACT_APP_URL;
 
-function AdminFormContainer(props) {
+function AdminFormContainerOld(props) {
 
     const [spinnerLoadingState, changeSpinnerLoadingState] = useState(false);
     const [hierarchyOne, changeHierarchyOne] = useState(props.location.one);
@@ -279,4 +279,4 @@ function AdminFormContainer(props) {
     );
 }
 
-export default withRouter(AdminFormContainer);
+export default withRouter(AdminFormContainerOld);
