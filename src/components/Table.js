@@ -37,7 +37,7 @@ function Table(props) {
                                             if(innerIndex === 0) {
                                                 return <th scope="row" className="col-sm-6 col-md-3" key={innerIndex}>
                                                     <Link to={"/admin/edit/" + props.headers[0] + "/" + innerValue} >
-                                                        {innerValue}
+                                                        <div data-toggle="tooltip" data-placement="top" title={"Edit data for " + innerValue}>{innerValue}</div>
                                                     </Link>
                                                 </th>
                                             } else {
