@@ -16,7 +16,7 @@ function AdminFormContainer(props) {
     const [data, changeData] = useState(undefined);
 
     function fetchData() {
-        fetch(`${apiEndpoint}/adminData/data`)
+        fetch(`${apiEndpoint}/adminData/${rootKey}/${rootValue}`)
             .then(res => res.json())
             .then(res => {
                 changeData(res);
