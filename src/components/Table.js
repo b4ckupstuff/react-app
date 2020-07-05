@@ -36,7 +36,7 @@ function Table(props) {
                                         props.data[index].map((innerValue, innerIndex) => {
                                             if(innerIndex === 0) {
                                                 return <th scope="row" className="col-sm-6 col-md-3" key={innerIndex}>
-                                                    <Link to="/admin/edit/Number/1" >
+                                                    <Link to={"/admin/edit/" + props.headers[0] + "/" + innerValue} >
                                                         {innerValue}
                                                     </Link>
                                                 </th>
