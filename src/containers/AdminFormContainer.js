@@ -6,7 +6,6 @@ const apiEndpoint = process.env.REACT_APP_URL;
 
 function AdminFormContainer(props) {
 
-    console.log(props);
     const [spinnerLoadingState, changeSpinnerLoadingState] = useState(true);
     const [rootKey, changeRootKey] = useState(props.match.params.a);
     const [rootValue, changeRootValue] = useState(props.match.params.b);
@@ -19,6 +18,7 @@ function AdminFormContainer(props) {
         fetch(`${apiEndpoint}/adminData/${rootKey}/${rootValue}`)
             .then(res => res.json())
             .then(res => {
+                console.log("here", res);
                 changeData(res);
                 changeSpinnerLoadingState(false);
             })
@@ -29,7 +29,8 @@ function AdminFormContainer(props) {
     }
 
     useEffect(() => {
-        fetchData();
+        if(!data)
+            fetchData();
     }, [data]);
 
     return (
@@ -65,7 +66,7 @@ function AdminFormContainer(props) {
                     }
 
                     {
-                        data && Object.key(data).map((value, index) => {
+                        data && Object.keys(data).map((value, index) => {
                             return <div className="form-group row" key={index}>
                                 <label htmlFor="input" className="col-sm-4 col-form-label">{value}</label>
                                 <div className="col-sm-8">
