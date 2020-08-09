@@ -1,6 +1,7 @@
 import React from 'react';
 
 function ResultCards(props) {
+    const data = props.content;
     return (
         <div>
             <div className="row row-cols-1 row-cols-md-2">
@@ -20,19 +21,35 @@ function ResultCards(props) {
                                 <tbody>
                                     <tr>
                                         <th scope="row">Date of Birth</th>
-                                        <td>1</td>
+                                        {
+                                            data.core.dateOfBirth.class ?
+                                                <td className={data.core.dateOfBirth.class}>{data.core.dateOfBirth.value}</td> :
+                                                <td>{data.core.dateOfBirth.value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">Life Path</th>
-                                        <td>3</td>
+                                        {
+                                            data.core.lifePath.class ?
+                                                <td className={data.core.lifePath.class}>{data.core.lifePath.value}</td> :
+                                                <td>{data.core.lifePath.value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">Expression</th>
-                                        <td className="text-warning">11/2</td>
+                                        {
+                                            data.core.expression.class ?
+                                                <td className={data.core.expression.class}>{data.core.expression.value}</td> :
+                                                <td>{data.core.expression.value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">Soul Urge</th>
-                                        <td>6</td>
+                                        {
+                                            data.core.soulUrge.class ?
+                                                <td className={data.core.soulUrge.class}>{data.core.soulUrge.value}</td> :
+                                                <td>{data.core.soulUrge.value}</td>
+                                        }
                                     </tr>
                                 </tbody>
                             </table>
@@ -55,19 +72,35 @@ function ResultCards(props) {
                                 <tbody>
                                 <tr>
                                     <th scope="row">Ist Challenge</th>
-                                    <td>7</td>
+                                    {
+                                        data.challenge.first.class ?
+                                            <td className={data.challenge.first.class}>{data.challenge.first.value}</td> :
+                                            <td>{data.challenge.first.value}</td>
+                                    }
                                 </tr>
                                 <tr>
                                     <th scope="row">IInd Challenge</th>
-                                    <td>2</td>
+                                    {
+                                        data.challenge.second.class ?
+                                            <td className={data.challenge.second.class}>{data.challenge.second.value}</td> :
+                                            <td>{data.challenge.second.value}</td>
+                                    }
                                 </tr>
                                 <tr>
                                     <th scope="row">IIIrd Challenge</th>
-                                    <td>5</td>
+                                    {
+                                        data.challenge.third.class ?
+                                            <td className={data.challenge.third.class}>{data.challenge.third.value}</td> :
+                                            <td>{data.challenge.third.value}</td>
+                                    }
                                 </tr>
                                 <tr>
                                     <th scope="row">IVth Challenge</th>
-                                    <td>5</td>
+                                    {
+                                        data.challenge.fourth.class ?
+                                            <td className={data.challenge.fourth.class}>{data.challenge.fourth.value}</td> :
+                                            <td>{data.challenge.fourth.value}</td>
+                                    }
                                 </tr>
                                 </tbody>
                             </table>
@@ -90,31 +123,59 @@ function ResultCards(props) {
                                 <tbody>
                                     <tr>
                                         <th scope="row">Personality Number</th>
-                                        <td>5</td>
+                                        {
+                                            data.important.personality.class ?
+                                                <td className={data.important.personality.class}>{data.important.personality.value}</td> :
+                                                <td>{data.important.personality.value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">Maturity Number</th>
-                                        <td>5</td>
+                                        {
+                                            data.important.maturity.class ?
+                                                <td className={data.important.maturity.class}>{data.important.maturity.value}</td> :
+                                                <td>{data.important.maturity.value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">Growth Number</th>
-                                        <td>3</td>
+                                        {
+                                            data.important.growth.class ?
+                                                <td className={data.important.growth.class}>{data.important.growrth.value}</td> :
+                                                <td>{data.important.growth.value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">Effectiveness</th>
-                                        <td>8</td>
+                                        {
+                                            data.important.effectiveness.class ?
+                                                <td className={data.important.effectiveness.class}>{data.important.effectiveness.value}</td> :
+                                                <td>{data.important.effectiveness.value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">Karmic Lesson</th>
-                                        <td>-</td>
+                                        {
+                                            data.important.karmic.class ?
+                                                <td className={data.important.karmic.class}>{data.important.karmic.value}</td> :
+                                                <td>{data.important.karmic.value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">First Letter</th>
-                                        <td>2 (B)</td>
+                                        {
+                                            data.important.firstLetter.class ?
+                                                <td className={data.important.firstLetter.class}>{data.important.firstLetter.value}</td> :
+                                                <td>{data.important.firstLetter.value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">First Vowel</th>
-                                        <td>5 (E)</td>
+                                        {
+                                            data.important.firstVowel.class ?
+                                                <td className={data.important.firstVowel.class}>{data.important.firstVowel.value}</td> :
+                                                <td>{data.important.firstVowel.value}</td>
+                                        }
                                     </tr>
                                 </tbody>
                             </table>
@@ -141,39 +202,75 @@ function ResultCards(props) {
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         </th>
-                                        <td>1</td>
+                                        {
+                                            data.intensity["1"].class ?
+                                                <td className={data.intensity["1"].class}>{data.intensity["1"].value}</td> :
+                                                <td>{data.intensity["1"].value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">2</th>
-                                        <td>2</td>
+                                        {
+                                            data.intensity["2"].class ?
+                                                <td className={data.intensity["2"].class}>{data.intensity["2"].value}</td> :
+                                                <td>{data.intensity["2"].value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">3</th>
-                                        <td>2</td>
+                                        {
+                                            data.intensity["3"].class ?
+                                                <td className={data.intensity["3"].class}>{data.intensity["3"].value}</td> :
+                                                <td>{data.intensity["3"].value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">4</th>
-                                        <td>1</td>
+                                        {
+                                            data.intensity["4"].class ?
+                                                <td className={data.intensity["4"].class}>{data.intensity["4"].value}</td> :
+                                                <td>{data.intensity["4"].value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">5</th>
-                                        <td>4</td>
+                                        {
+                                            data.intensity["5"].class ?
+                                                <td className={data.intensity["5"].class}>{data.intensity["5"].value}</td> :
+                                                <td>{data.intensity["5"].value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">6</th>
-                                        <td>1</td>
+                                        {
+                                            data.intensity["6"].class ?
+                                                <td className={data.intensity["6"].class}>{data.intensity["6"].value}</td> :
+                                                <td>{data.intensity["6"].value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">7</th>
-                                        <td>1</td>
+                                        {
+                                            data.intensity["7"].class ?
+                                                <td className={data.intensity["7"].class}>{data.intensity["7"].value}</td> :
+                                                <td>{data.intensity["7"].value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">8</th>
-                                        <td>1</td>
+                                        {
+                                            data.intensity["8"].class ?
+                                                <td className={data.intensity["8"].class}>{data.intensity["8"].value}</td> :
+                                                <td>{data.intensity["8"].value}</td>
+                                        }
                                     </tr>
                                     <tr>
                                         <th scope="row">9</th>
-                                        <td>2</td>
+                                        {
+                                            data.intensity["9"].class ?
+                                                <td className={data.intensity["9"].class}>{data.intensity["9"].value}</td> :
+                                                <td>{data.intensity["9"].value}</td>
+                                        }
                                     </tr>
                                 </tbody>
                             </table>

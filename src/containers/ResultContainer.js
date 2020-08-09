@@ -6,7 +6,7 @@ import ResultCards from "../components/componentCss/ResultCards";
 
 function ResultContainer(props) {
     const history = useHistory();
-    console.log(history.location.state);
+    // console.log(history.location.state);
     return (
         <div className="App">
             <div className="container">
@@ -16,7 +16,7 @@ function ResultContainer(props) {
                     levelTwo="Your Name Here"
                 />
 
-                <ResultCards />
+                <ResultCards content={history.location.state}/>
 
                 <hr />
 
