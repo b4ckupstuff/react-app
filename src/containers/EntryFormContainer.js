@@ -1,11 +1,15 @@
 import React, {useState} from 'react';
 import { useHistory } from "react-router-dom";
+import DismissableAlert from "../components/DismissableAlert";
 const apiEndpoint = process.env.REACT_APP_URL;
 
 function EntryFormContainer() {
 
 	const history = useHistory();
 	const [spinnerLoadingState, changeSpinnerLoadingState] = useState(false);
+	const [showAlert, changeShowAlert] = useState(false);
+	const [alertCode, changeAlertCode] = useState("");
+	const [alertMessage, changeAlertMessage] = useState("");
 
 	const validateInput = (fullName, dateOfBirth) => {
 		try {
@@ -42,11 +46,23 @@ function EntryFormContainer() {
 				}).catch(err => console.log(err));
 		} else {
 			// show error alert
+			changeSpinnerLoadingState(false);
+			changeShowAlert(true);
+			changeAlertCode("Error!");
+			changeAlertMessage("Make sure to enter the name and date of birth correctly.");
 		}
 	};
 
 	return (
 		<div className="App">
+
+			{ showAlert &&
+				<DismissableAlert
+					code={alertCode}
+					message={alertMessage}
+				/>
+			}
+
 			<form className="form-signin" action="#">
 				<div className="text-center mb-4">
 				<img className="mb-4" src="logo.svg" alt="" width="72" height="72" />
