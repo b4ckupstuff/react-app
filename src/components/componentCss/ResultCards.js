@@ -297,7 +297,7 @@ function ResultCards(props) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    {/*<tr>
                                         <td>0</td>
                                         <td>B</td>
                                         <td>S</td>
@@ -308,55 +308,23 @@ function ResultCards(props) {
                                         <td>1974</td>
                                         <td>8</td>
                                         <td>9</td>
-                                    </tr>
-                                    <tr>
-                                        <td>0</td>
-                                        <td>B</td>
-                                        <td>S</td>
-                                        <td>G</td>
-                                        <td>1</td>
-                                        <td>3</td>
-                                        <td>3</td>
-                                        <td>1974</td>
-                                        <td>8</td>
-                                        <td>9</td>
-                                    </tr>
-                                    <tr>
-                                        <td>0</td>
-                                        <td>B</td>
-                                        <td>S</td>
-                                        <td>G</td>
-                                        <td>1</td>
-                                        <td>3</td>
-                                        <td>3</td>
-                                        <td>1974</td>
-                                        <td>8</td>
-                                        <td>9</td>
-                                    </tr>
-                                    <tr>
-                                        <td>0</td>
-                                        <td>B</td>
-                                        <td>S</td>
-                                        <td>G</td>
-                                        <td className="text-danger">13/4</td>
-                                        <td>3</td>
-                                        <td>3</td>
-                                        <td>1974</td>
-                                        <td>8</td>
-                                        <td>9</td>
-                                    </tr>
-                                    <tr>
-                                        <td>0</td>
-                                        <td>B</td>
-                                        <td>S</td>
-                                        <td>G</td>
-                                        <td>1</td>
-                                        <td>3</td>
-                                        <td>3</td>
-                                        <td>1974</td>
-                                        <td>8</td>
-                                        <td>9</td>
-                                    </tr>
+                                    </tr>*/}
+                                    {
+                                        data.yearly.map((value, index) => {
+                                            return <tr>
+                                                <td className={value.age.class}>{value.age.value}</td>
+                                                <td />
+                                                <td />
+                                                <td />
+                                                <td className={value.essence.class}>{value.essence.value}</td>
+                                                <td className={value.personalYear.class}>{value.personalYear.value}</td>
+                                                <td className={value.universalYear.class}>{value.universalYear.value}</td>
+                                                <td className={value.year.class}>{value.year.value}</td>
+                                                <td className={value.period.class}>{value.period.value}</td>
+                                                <td className={value.pinnacle.class}>{value.pinnacle.value}</td>
+                                            </tr>
+                                        })
+                                    }
                                 </tbody>
                             </table>
                         </div>
