@@ -55,20 +55,18 @@ function EntryFormContainer() {
 
 	return (
 		<div className="App">
-
-			{ showAlert &&
-				<DismissableAlert
-					code={alertCode}
-					message={alertMessage}
-				/>
-			}
-
 			<form className="form-signin" action="#">
 				<div className="text-center mb-4">
-				<img className="mb-4" src="logo.svg" alt="" width="72" height="72" />
-					<h1 className="h3 mb-3 font-weight-normal">Heading Text</h1>
-					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
-						The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
+					{ showAlert &&
+						<DismissableAlert
+							code={alertCode}
+							message={alertMessage}
+						/>
+					}
+					<img className="mb-4" src="logo.svg" alt="" width="72" height="72" />
+						<h1 className="h3 mb-3 font-weight-normal">Heading Text</h1>
+						<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+							The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
 				</div>
 
 				<div className="form-label-group">
