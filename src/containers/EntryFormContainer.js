@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useHistory } from "react-router-dom";
-const apiEndpoint = ``;
+const apiEndpoint = process.env.REACT_APP_URL;
 
 function EntryFormContainer() {
 
