@@ -28,7 +28,7 @@ function ResultCards(props) {
                                     </tr>
                                     <tr>
                                         <th scope="row">Expression</th>
-                                        <td>11/2</td>
+                                        <td className="text-warning">11/2</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Soul Urge</th>
@@ -174,6 +174,91 @@ function ResultCards(props) {
                                     <tr>
                                         <th scope="row">9</th>
                                         <td>2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col mb-4">
+                    <div className="card border-dark mb-3">
+                        <div className="card-header">Yearly Details</div>
+                        <div className="card-body text-dark">
+                            <table className="table table-bordered table-hover text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Age</th>
+                                        <th colSpan="3">Transits</th>
+                                        <th>Essence</th>
+                                        <th>Personal Year</th>
+                                        <th>Universal Year</th>
+                                        <th>Year</th>
+                                        <th>Period</th>
+                                        <th>Pinnacle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>B</td>
+                                        <td>S</td>
+                                        <td>G</td>
+                                        <td className="text-warning">11/2</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>1974</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>B</td>
+                                        <td>S</td>
+                                        <td>G</td>
+                                        <td>1</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>1974</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>B</td>
+                                        <td>S</td>
+                                        <td>G</td>
+                                        <td>1</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>1974</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>B</td>
+                                        <td>S</td>
+                                        <td>G</td>
+                                        <td className="text-danger">13/4</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>1974</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>B</td>
+                                        <td>S</td>
+                                        <td>G</td>
+                                        <td>1</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>1974</td>
+                                        <td>8</td>
+                                        <td>9</td>
                                     </tr>
                                 </tbody>
                             </table>

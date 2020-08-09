@@ -6,7 +6,12 @@ function Breadcrumb(props) {
     return (
         <nav aria-label="breadcrumb">
             <ol className="breadcrumb resetBackgroundColor">
-                <li className="breadcrumb-item"><Link to="/admin">{props.levelOne}</Link></li>
+                {
+                    props.levelOneLink ?
+                        <li className="breadcrumb-item"><Link to={"/" + props.levelOneLink}>{props.levelOne}</Link></li>
+                        :
+                        <li className="breadcrumb-item"><Link to="/">{props.levelOne}</Link></li>
+                }
                 <li className="breadcrumb-item active breadcrumbContent" aria-current="page">{props.levelTwo}</li>
             </ol>
         </nav>

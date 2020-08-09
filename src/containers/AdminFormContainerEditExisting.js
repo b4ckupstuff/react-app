@@ -36,7 +36,7 @@ console.log(props);
     return (
         <div className="App">
             <div className="container">
-                <Breadcrumb levelOne="Admin" levelTwo="Edit data"/>
+                <Breadcrumb levelOne="Admin" levelOneLink="admin" levelTwo="Edit data"/>
 
                 { showAlert &&
                     <DismissableAlert
