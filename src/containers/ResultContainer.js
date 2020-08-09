@@ -18,6 +18,8 @@ function ResultContainer(props) {
 
                 <ResultCards />
 
+                <hr />
+
                 <ThreeXThreeGrid />
 
             </div>
