@@ -145,14 +145,14 @@ function ResultCards(props) {
                                                 <td>{data.important.growth.value}</td>
                                         }
                                     </tr>
-                                    <tr>
+                                    {/*<tr>
                                         <th scope="row">Effectiveness</th>
                                         {
                                             data.important.effectiveness.class ?
                                                 <td className={data.important.effectiveness.class}>{data.important.effectiveness.value}</td> :
                                                 <td>{data.important.effectiveness.value}</td>
                                         }
-                                    </tr>
+                                    </tr>*/}
                                     <tr>
                                         <th scope="row">Karmic Lesson</th>
                                         {
